@@ -4,7 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
 import com.liuenci.vblog.modal.Vo.AttachVo;
 import com.liuenci.vblog.modal.Vo.UserVo;
 import com.liuenci.vblog.service.IAttachService;

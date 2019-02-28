@@ -1,8 +1,8 @@
 package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.dto.LogActions;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
-import com.liuenci.vblog.modal.Bo.StatisticsBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.StatisticsBo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.ContentVo;
 import com.liuenci.vblog.modal.Vo.LogVo;

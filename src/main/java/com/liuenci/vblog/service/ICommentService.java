@@ -3,7 +3,7 @@ package com.liuenci.vblog.service;
 import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.CommentVoExample;
-import com.liuenci.vblog.modal.Bo.CommentBo;
+import com.liuenci.vblog.modal.bo.CommentBo;
 
 /**
  * Created by BlueT on 2017/3/16.

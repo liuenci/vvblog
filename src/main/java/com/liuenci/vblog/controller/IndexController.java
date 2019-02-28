@@ -4,9 +4,9 @@ import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.dto.ErrorCode;
 import com.liuenci.vblog.dto.MetaDto;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.Bo.ArchiveBo;
-import com.liuenci.vblog.modal.Bo.CommentBo;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.ArchiveBo;
+import com.liuenci.vblog.modal.bo.CommentBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.ContentVo;
 import com.liuenci.vblog.modal.Vo.MetaVo;
@@ -20,9 +20,8 @@ import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.IMetaService;
 import com.liuenci.vblog.service.ISiteService;
 import com.vdurmont.emoji.EmojiParser;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -37,11 +36,11 @@ import java.util.List;
 
 /**
  * 首页
- * Created by Administrator on 2017/3/8 008.
+ * @author liuenci
  */
 @Controller
+@Slf4j
 public class IndexController extends BaseController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
 
     @Resource
     private IContentService contentService;
@@ -75,7 +74,9 @@ public class IndexController extends BaseController {
      */
     @GetMapping(value = "page/{p}")
     public String index(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+        // 判断页码是否超出范围
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
+        // PageInfo 进行分页
         PageInfo<ContentVo> articles = contentService.getContents(p, limit);
         request.setAttribute("articles", articles);
         if (p > 1) {
@@ -84,6 +85,7 @@ public class IndexController extends BaseController {
         return this.render("index");
     }
 
+    private static final String DRAFT = "draft";
     /**
      * 文章页
      *
@@ -94,7 +96,8 @@ public class IndexController extends BaseController {
     @GetMapping(value = {"article/{cid}", "article/{cid}.html"})
     public String getArticle(HttpServletRequest request, @PathVariable String cid) {
         ContentVo contents = contentService.getContents(cid);
-        if (null == contents || "draft".equals(contents.getStatus())) {
+        // 判断内容是否为空，或者是草稿文章
+        if (null == contents || DRAFT.equals(contents.getStatus())) {
             return this.render_404();
         }
         request.setAttribute("article", contents);
@@ -229,7 +232,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                LOGGER.error(msg, e);
+                log.error(msg, e);
             }
             return RestResponseBo.fail(msg);
         }

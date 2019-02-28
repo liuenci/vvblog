@@ -2,8 +2,8 @@ package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
-import com.liuenci.vblog.modal.Bo.BackResponseBo;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.BackResponseBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
 import com.liuenci.vblog.modal.Vo.OptionVo;
 import com.liuenci.vblog.utils.GsonUtils;
 import com.liuenci.vblog.service.ILogService;

@@ -1,7 +1,7 @@
 package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
 import com.liuenci.vblog.modal.Vo.MetaVo;
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.exception.TipException;

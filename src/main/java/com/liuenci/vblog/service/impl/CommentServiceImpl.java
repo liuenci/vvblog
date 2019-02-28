@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.dao.CommentVoMapper;
 import com.liuenci.vblog.exception.TipException;
-import com.liuenci.vblog.modal.Bo.CommentBo;
+import com.liuenci.vblog.modal.bo.CommentBo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.CommentVoExample;
 import com.liuenci.vblog.modal.Vo.ContentVo;

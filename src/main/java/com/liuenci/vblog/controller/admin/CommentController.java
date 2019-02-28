@@ -1,7 +1,7 @@
 package com.liuenci.vblog.controller.admin;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.Bo.RestResponseBo;
+import com.liuenci.vblog.modal.bo.RestResponseBo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.CommentVoExample;
 import com.liuenci.vblog.modal.Vo.UserVo;

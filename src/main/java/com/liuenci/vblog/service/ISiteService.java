@@ -1,9 +1,9 @@
 package com.liuenci.vblog.service;
 
 import com.liuenci.vblog.dto.MetaDto;
-import com.liuenci.vblog.modal.Bo.ArchiveBo;
-import com.liuenci.vblog.modal.Bo.BackResponseBo;
-import com.liuenci.vblog.modal.Bo.StatisticsBo;
+import com.liuenci.vblog.modal.bo.ArchiveBo;
+import com.liuenci.vblog.modal.bo.BackResponseBo;
+import com.liuenci.vblog.modal.bo.StatisticsBo;
 import com.liuenci.vblog.modal.Vo.CommentVo;
 import com.liuenci.vblog.modal.Vo.ContentVo;
 

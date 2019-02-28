@@ -1,6 +1,6 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.Bo.ArchiveBo;
+import com.liuenci.vblog.modal.bo.ArchiveBo;
 import com.liuenci.vblog.modal.Vo.ContentVo;
 import com.liuenci.vblog.modal.Vo.ContentVoExample;
 
