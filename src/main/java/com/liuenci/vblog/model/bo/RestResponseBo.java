@@ -1,4 +1,4 @@
-package com.liuenci.vblog.modal.bo;
+package com.liuenci.vblog.model.bo;
 
 import lombok.*;
 

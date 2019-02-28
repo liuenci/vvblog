@@ -1,6 +1,6 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.vo.OptionVo;
+import com.liuenci.vblog.model.vo.OptionVo;
 
 import java.util.List;
 import java.util.Map;

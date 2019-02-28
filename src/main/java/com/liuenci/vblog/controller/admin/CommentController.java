@@ -1,10 +1,10 @@
 package com.liuenci.vblog.controller.admin;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
-import com.liuenci.vblog.modal.vo.CommentVo;
-import com.liuenci.vblog.modal.vo.CommentVoExample;
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
+import com.liuenci.vblog.model.vo.CommentVo;
+import com.liuenci.vblog.model.vo.CommentVoExample;
+import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.service.ICommentService;
 import com.liuenci.vblog.utils.TaleUtils;
 import com.vdurmont.emoji.EmojiParser;
@@ -21,7 +21,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by 13 on 2017/2/26.
+ * @author liuenci
  */
 @Controller
 @RequestMapping("admin/comments")

@@ -1,6 +1,6 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.vo.UserVo;
 
 /**
  *

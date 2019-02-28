@@ -1,6 +1,6 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.vo.LogVo;
+import com.liuenci.vblog.model.vo.LogVo;
 
 import java.util.List;
 

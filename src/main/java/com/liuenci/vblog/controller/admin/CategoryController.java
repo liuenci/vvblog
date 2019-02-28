@@ -3,7 +3,7 @@ package com.liuenci.vblog.controller.admin;
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.MetaDto;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.IMetaService;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by 13 on 2017/2/21.
+ * @author liuenci
  */
 @Controller
 @RequestMapping("admin/category")

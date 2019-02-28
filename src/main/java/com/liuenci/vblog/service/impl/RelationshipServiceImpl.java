@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.RelationshipVoMapper;
-import com.liuenci.vblog.modal.vo.RelationshipVoExample;
-import com.liuenci.vblog.modal.vo.RelationshipVoKey;
+import com.liuenci.vblog.model.vo.RelationshipVoExample;
+import com.liuenci.vblog.model.vo.RelationshipVoKey;
 import com.liuenci.vblog.service.IRelationshipService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

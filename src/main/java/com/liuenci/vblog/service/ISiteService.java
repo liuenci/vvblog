@@ -1,11 +1,11 @@
 package com.liuenci.vblog.service;
 
 import com.liuenci.vblog.dto.MetaDto;
-import com.liuenci.vblog.modal.bo.ArchiveBo;
-import com.liuenci.vblog.modal.bo.BackResponseBo;
-import com.liuenci.vblog.modal.bo.StatisticsBo;
-import com.liuenci.vblog.modal.vo.CommentVo;
-import com.liuenci.vblog.modal.vo.ContentVo;
+import com.liuenci.vblog.model.bo.ArchiveBo;
+import com.liuenci.vblog.model.bo.BackResponseBo;
+import com.liuenci.vblog.model.bo.StatisticsBo;
+import com.liuenci.vblog.model.vo.CommentVo;
+import com.liuenci.vblog.model.vo.ContentVo;
 
 import java.util.List;
 

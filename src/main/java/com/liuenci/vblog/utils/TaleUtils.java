@@ -3,7 +3,7 @@ package com.liuenci.vblog.utils;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.controller.admin.AttachController;
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.vo.UserVo;
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;

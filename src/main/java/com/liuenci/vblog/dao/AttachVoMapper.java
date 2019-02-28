@@ -1,7 +1,7 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.vo.AttachVo;
-import com.liuenci.vblog.modal.vo.AttachVoExample;
+import com.liuenci.vblog.model.vo.AttachVo;
+import com.liuenci.vblog.model.vo.AttachVoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.vo.OptionVo;
-import com.liuenci.vblog.modal.vo.OptionVoExample;
+import com.liuenci.vblog.model.vo.OptionVo;
+import com.liuenci.vblog.model.vo.OptionVoExample;
 
 import java.util.List;
 

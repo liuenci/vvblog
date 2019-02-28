@@ -4,9 +4,9 @@ import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
-import com.liuenci.vblog.modal.vo.AttachVo;
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
+import com.liuenci.vblog.model.vo.AttachVo;
+import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.service.IAttachService;
 import com.liuenci.vblog.utils.Commons;
 import com.liuenci.vblog.utils.TaleUtils;
@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 附件管理
  *
- * Created by 13 on 2017/2/21.
+ * @author liuenci
  */
 @Controller
 @RequestMapping("admin/attach")

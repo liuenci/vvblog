@@ -7,8 +7,8 @@ import com.vdurmont.emoji.EmojiParser;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.dto.MetaDto;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.vo.CommentVo;
-import com.liuenci.vblog.modal.vo.ContentVo;
+import com.liuenci.vblog.model.vo.CommentVo;
+import com.liuenci.vblog.model.vo.ContentVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 

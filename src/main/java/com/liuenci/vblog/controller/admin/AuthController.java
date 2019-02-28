@@ -2,8 +2,8 @@ package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
+import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.utils.Commons;
 import com.liuenci.vblog.utils.TaleUtils;
 import com.liuenci.vblog.constant.WebConst;
@@ -26,7 +26,7 @@ import java.io.IOException;
 
 /**
  * 用户后台登录/登出
- * Created by BlueT on 2017/3/11.
+ * @author liuenci
  */
 @Controller
 @RequestMapping("/admin")

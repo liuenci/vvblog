@@ -1,7 +1,7 @@
 package com.liuenci.vblog.service;
 
 import com.liuenci.vblog.dto.MetaDto;
-import com.liuenci.vblog.modal.vo.MetaVo;
+import com.liuenci.vblog.model.vo.MetaVo;
 
 import java.util.List;
 

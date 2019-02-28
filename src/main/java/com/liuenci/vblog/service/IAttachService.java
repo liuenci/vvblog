@@ -1,7 +1,7 @@
 package com.liuenci.vblog.service;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.vo.AttachVo;
+import com.liuenci.vblog.model.vo.AttachVo;
 
 
 /**

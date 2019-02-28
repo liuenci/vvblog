@@ -1,6 +1,6 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.vo.RelationshipVoKey;
+import com.liuenci.vblog.model.vo.RelationshipVoKey;
 
 import java.util.List;
 

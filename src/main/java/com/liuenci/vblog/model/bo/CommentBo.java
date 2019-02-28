@@ -1,6 +1,6 @@
-package com.liuenci.vblog.modal.bo;
+package com.liuenci.vblog.model.bo;
 
-import com.liuenci.vblog.modal.vo.CommentVo;
+import com.liuenci.vblog.model.vo.CommentVo;
 import lombok.*;
 
 import java.util.List;

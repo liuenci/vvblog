@@ -1,7 +1,7 @@
 package com.liuenci.vblog.utils;
 
 
-import com.liuenci.vblog.modal.vo.MetaVo;
+import com.liuenci.vblog.model.vo.MetaVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 

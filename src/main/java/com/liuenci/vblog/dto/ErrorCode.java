@@ -2,7 +2,7 @@ package com.liuenci.vblog.dto;
 
 /**
  * 错误提示
- * Created by 13 on 2017/2/26.
+ * @author liuenci
  */
 public interface ErrorCode {
 

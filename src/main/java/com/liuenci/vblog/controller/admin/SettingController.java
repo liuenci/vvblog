@@ -2,9 +2,9 @@ package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
-import com.liuenci.vblog.modal.bo.BackResponseBo;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
-import com.liuenci.vblog.modal.vo.OptionVo;
+import com.liuenci.vblog.model.bo.BackResponseBo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
+import com.liuenci.vblog.model.vo.OptionVo;
 import com.liuenci.vblog.utils.GsonUtils;
 import com.liuenci.vblog.service.ILogService;
 import com.liuenci.vblog.service.ISiteService;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by wangq on 2017/3/20.
+ * @author liuenci
  */
 @Controller
 @RequestMapping("/admin/setting")

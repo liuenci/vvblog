@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.vo.ContentVoExample;
-import com.liuenci.vblog.modal.vo.ContentVo;
+import com.liuenci.vblog.model.vo.ContentVoExample;
+import com.liuenci.vblog.model.vo.ContentVo;
 
 
 /**

@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.UserVoMapper;
-import com.liuenci.vblog.modal.vo.UserVo;
-import com.liuenci.vblog.modal.vo.UserVoExample;
+import com.liuenci.vblog.model.vo.UserVo;
+import com.liuenci.vblog.model.vo.UserVoExample;
 import com.liuenci.vblog.service.IUserService;
 import com.liuenci.vblog.utils.TaleUtils;
 import com.liuenci.vblog.exception.TipException;

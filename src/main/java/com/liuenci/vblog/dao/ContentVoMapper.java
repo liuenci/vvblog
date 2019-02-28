@@ -1,8 +1,8 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.bo.ArchiveBo;
-import com.liuenci.vblog.modal.vo.ContentVo;
-import com.liuenci.vblog.modal.vo.ContentVoExample;
+import com.liuenci.vblog.model.bo.ArchiveBo;
+import com.liuenci.vblog.model.vo.ContentVo;
+import com.liuenci.vblog.model.vo.ContentVoExample;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

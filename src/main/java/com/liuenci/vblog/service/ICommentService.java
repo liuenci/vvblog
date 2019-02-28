@@ -1,9 +1,9 @@
 package com.liuenci.vblog.service;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.vo.CommentVo;
-import com.liuenci.vblog.modal.vo.CommentVoExample;
-import com.liuenci.vblog.modal.bo.CommentBo;
+import com.liuenci.vblog.model.vo.CommentVo;
+import com.liuenci.vblog.model.vo.CommentVoExample;
+import com.liuenci.vblog.model.bo.CommentBo;
 
 
 /**

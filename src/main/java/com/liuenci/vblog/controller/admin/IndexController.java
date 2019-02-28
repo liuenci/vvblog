@@ -1,12 +1,12 @@
 package com.liuenci.vblog.controller.admin;
 
 import com.liuenci.vblog.dto.LogActions;
-import com.liuenci.vblog.modal.bo.RestResponseBo;
-import com.liuenci.vblog.modal.bo.StatisticsBo;
-import com.liuenci.vblog.modal.vo.CommentVo;
-import com.liuenci.vblog.modal.vo.ContentVo;
-import com.liuenci.vblog.modal.vo.LogVo;
-import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.model.bo.RestResponseBo;
+import com.liuenci.vblog.model.bo.StatisticsBo;
+import com.liuenci.vblog.model.vo.CommentVo;
+import com.liuenci.vblog.model.vo.ContentVo;
+import com.liuenci.vblog.model.vo.LogVo;
+import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.utils.TaleUtils;
 import com.liuenci.vblog.service.ISiteService;
 import com.liuenci.vblog.constant.WebConst;
@@ -29,7 +29,7 @@ import java.util.List;
 
 /**
  * 后台管理首页
- * Created by Administrator on 2017/3/9 009.
+ * @author liuenci
  */
 @Controller("adminIndexController")
 @RequestMapping("/admin")

@@ -1,6 +1,6 @@
-package com.liuenci.vblog.modal.bo;
+package com.liuenci.vblog.model.bo;
 
-import com.liuenci.vblog.modal.vo.ContentVo;
+import com.liuenci.vblog.model.vo.ContentVo;
 import lombok.*;
 
 import java.io.Serializable;

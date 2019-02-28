@@ -2,8 +2,8 @@ package com.liuenci.vblog.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.liuenci.vblog.dao.LogVoMapper;
-import com.liuenci.vblog.modal.vo.LogVo;
-import com.liuenci.vblog.modal.vo.LogVoExample;
+import com.liuenci.vblog.model.vo.LogVo;
+import com.liuenci.vblog.model.vo.LogVoExample;
 import com.liuenci.vblog.service.ILogService;
 import com.liuenci.vblog.utils.DateKit;
 import com.liuenci.vblog.constant.WebConst;

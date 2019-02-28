@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.OptionVoMapper;
-import com.liuenci.vblog.modal.vo.OptionVo;
-import com.liuenci.vblog.modal.vo.OptionVoExample;
+import com.liuenci.vblog.model.vo.OptionVo;
+import com.liuenci.vblog.model.vo.OptionVoExample;
 import com.liuenci.vblog.service.IOptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,5 +1,9 @@
 package com.liuenci.vblog.dto;
 
+/**
+ * @author liuenci
+ */
+
 public enum Types {
     TAG("tag"),
     CATEGORY("category"),
