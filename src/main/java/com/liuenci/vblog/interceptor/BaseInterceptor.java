@@ -44,9 +44,9 @@ public class BaseInterceptor implements HandlerInterceptor {
 
 
         //请求拦截处理
-        UserVo user = TaleUtils.getLoginUser(request);
+        UserVo user = CommonUtils.getLoginUser(request);
         if (null == user) {
-            Integer uid = TaleUtils.getCookieUid(request);
+            Integer uid = CommonUtils.getCookieUid(request);
             if (null != uid) {
                 //这里还是有安全隐患,cookie是可以伪造的
                 user = userService.queryUserById(uid);

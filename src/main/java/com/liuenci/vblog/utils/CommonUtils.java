@@ -30,11 +30,10 @@ import java.util.regex.Pattern;
 
 /**
  * Tale工具类
- * <p>
- * Created by 13 on 2017/2/21.
+ * @author liuenci
  */
-public class TaleUtils {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TaleUtils.class);
+public class CommonUtils {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommonUtils.class);
 
     private static DataSource newDataSource;
     /**
@@ -54,7 +53,7 @@ public class TaleUtils {
     /**
      * 获取文件所在目录
      */
-    private static String location = TaleUtils.class.getClassLoader().getResource("").getPath();
+    private static String location = CommonUtils.class.getClassLoader().getResource("").getPath();
 
     /**
      * 判断是否是邮箱
@@ -122,7 +121,7 @@ public class TaleUtils {
         Properties properties = new Properties();
         try {
 //            默认是classPath路径
-            InputStream resourceAsStream = TaleUtils.class.getClassLoader().getResourceAsStream(fileName);
+            InputStream resourceAsStream = CommonUtils.class.getClassLoader().getResourceAsStream(fileName);
             if (resourceAsStream == null) {
                 throw new TipException("get resource from path fail");
             }
@@ -182,9 +181,9 @@ public class TaleUtils {
      * @return
      */
     public static DataSource getNewDataSource() {
-        if (newDataSource == null) synchronized (TaleUtils.class) {
+        if (newDataSource == null) synchronized (CommonUtils.class) {
             if (newDataSource == null) {
-                Properties properties = TaleUtils.getPropFromFile("application-jdbc.properties");
+                Properties properties = CommonUtils.getPropFromFile("application-jdbc.properties");
                 if (properties.size() == 0) {
                     return newDataSource;
                 }
@@ -485,7 +484,7 @@ public class TaleUtils {
      * @return
      */
     public static String getUplodFilePath() {
-        String path = TaleUtils.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        String path = CommonUtils.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         path = path.substring(1, path.length());
         try {
             path = java.net.URLDecoder.decode(path, "utf-8");

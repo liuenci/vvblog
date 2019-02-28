@@ -6,7 +6,7 @@ import com.liuenci.vblog.model.vo.CommentVo;
 import com.liuenci.vblog.model.vo.CommentVoExample;
 import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.service.ICommentService;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.vdurmont.emoji.EmojiParser;
 import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.exception.TipException;
@@ -122,7 +122,7 @@ public class CommentController extends BaseController {
             return RestResponseBo.fail("不存在该评论");
         }
         UserVo users = this.user(request);
-        content = TaleUtils.cleanXSS(content);
+        content = CommonUtils.cleanXSS(content);
         content = EmojiParser.parseToAliases(content);
 
         CommentVo comments = new CommentVo();

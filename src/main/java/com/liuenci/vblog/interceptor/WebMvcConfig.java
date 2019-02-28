@@ -1,7 +1,7 @@
 package com.liuenci.vblog.interceptor;
 
 
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -28,7 +28,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/**").addResourceLocations("file:"+ TaleUtils.getUplodFilePath()+"upload/");
+        registry.addResourceHandler("/upload/**").addResourceLocations("file:"+ CommonUtils.getUplodFilePath()+"upload/");
         super.addResourceHandlers(registry);
     }
 }

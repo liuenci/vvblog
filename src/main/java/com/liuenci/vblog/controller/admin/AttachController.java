@@ -9,7 +9,7 @@ import com.liuenci.vblog.model.vo.AttachVo;
 import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.service.IAttachService;
 import com.liuenci.vblog.utils.Commons;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.ILogService;
@@ -40,7 +40,7 @@ public class AttachController extends BaseController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AttachController.class);
 
-    public static final String CLASSPATH = TaleUtils.getUplodFilePath();
+    public static final String CLASSPATH = CommonUtils.getUplodFilePath();
 
     @Resource
     private IAttachService attachService;
@@ -83,8 +83,8 @@ public class AttachController extends BaseController {
             for (MultipartFile multipartFile : multipartFiles) {
                 String fname = multipartFile.getOriginalFilename();
                 if (multipartFile.getSize() <= WebConst.MAX_FILE_SIZE) {
-                    String fkey = TaleUtils.getFileKey(fname);
-                    String ftype = TaleUtils.isImage(multipartFile.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType();
+                    String fkey = CommonUtils.getFileKey(fname);
+                    String ftype = CommonUtils.isImage(multipartFile.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType();
                     File file = new File(CLASSPATH+fkey);
                     try {
                         FileCopyUtils.copy(multipartFile.getInputStream(),new FileOutputStream(file));

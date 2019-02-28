@@ -5,15 +5,14 @@ import com.liuenci.vblog.dto.LogActions;
 import com.liuenci.vblog.model.bo.RestResponseBo;
 import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.utils.Commons;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.ILogService;
 import com.liuenci.vblog.service.IUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -31,9 +30,9 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/admin")
 @Transactional(rollbackFor = TipException.class)
+@Slf4j
 public class AuthController extends BaseController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
     @Resource
     private IUserService usersService;
@@ -68,7 +67,7 @@ public class AuthController extends BaseController {
             UserVo user = usersService.login(username, password);
             request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
             if (StringUtils.isNotBlank(remeber_me)) {
-                TaleUtils.setCookie(response, user.getUid());
+                CommonUtils.setCookie(response, user.getUid());
             }
             logService.insertLog(LogActions.LOGIN.getAction(), null, request.getRemoteAddr(), user.getUid());
         } catch (Exception e) {
@@ -81,7 +80,7 @@ public class AuthController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                LOGGER.error(msg, e);
+                log.error(msg, e);
             }
             return RestResponseBo.fail(msg);
         }
@@ -94,17 +93,16 @@ public class AuthController extends BaseController {
      * @param response
      */
     @RequestMapping("/logout")
-    public void logout(HttpSession session, HttpServletResponse response, HttpServletRequest request) {
+    public void logout(HttpSession session, HttpServletResponse response) {
         session.removeAttribute(WebConst.LOGIN_SESSION_KEY);
         Cookie cookie = new Cookie(WebConst.USER_IN_COOKIE, "");
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         try {
-            //response.sendRedirect(Commons.site_url());
             response.sendRedirect(Commons.site_login());
         } catch (IOException e) {
             e.printStackTrace();
-            LOGGER.error("注销失败", e);
+            log.error("注销失败", e);
         }
     }
 }

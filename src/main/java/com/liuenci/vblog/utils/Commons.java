@@ -23,8 +23,6 @@ import java.util.regex.Pattern;
 
 /**
  * 主题公共函数
- * <p>
- * Created by 13 on 2017/2/21.
  */
 @Component
 public final class Commons {
@@ -163,7 +161,7 @@ public final class Commons {
         if (StringUtils.isBlank(email)) {
             return avatarUrl;
         }
-        String hash = TaleUtils.MD5encode(email.trim().toLowerCase());
+        String hash = CommonUtils.MD5encode(email.trim().toLowerCase());
         return avatarUrl + "/" + hash;
     }
 
@@ -271,9 +269,9 @@ public final class Commons {
         int pos = value.indexOf("<!--more-->");
         if (pos != -1) {
             String html = value.substring(0, pos);
-            return TaleUtils.htmlToText(TaleUtils.mdToHtml(html));
+            return CommonUtils.htmlToText(CommonUtils.mdToHtml(html));
         } else {
-            String text = TaleUtils.htmlToText(TaleUtils.mdToHtml(value));
+            String text = CommonUtils.htmlToText(CommonUtils.mdToHtml(value));
             if (text.length() > len) {
                 return text.substring(0, len);
             }
@@ -290,7 +288,7 @@ public final class Commons {
     public static String article(String value) {
         if (StringUtils.isNotBlank(value)) {
             value = value.replace("<!--more-->", "\r\n");
-            return TaleUtils.mdToHtml(value);
+            return CommonUtils.mdToHtml(value);
         }
         return "";
     }
@@ -401,7 +399,7 @@ public final class Commons {
      * @return
      */
     public static String show_thumb(String content) {
-        content = TaleUtils.mdToHtml(content);
+        content = CommonUtils.mdToHtml(content);
         if (content.contains("<img")) {
             String img = "";
             String regEx_img = "<img.*src\\s*=\\s*(.*?)[^>]*?>";

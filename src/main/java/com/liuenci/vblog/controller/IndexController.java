@@ -14,7 +14,7 @@ import com.liuenci.vblog.service.ICommentService;
 import com.liuenci.vblog.service.IContentService;
 import com.liuenci.vblog.utils.IPKit;
 import com.liuenci.vblog.utils.PatternKit;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.IMetaService;
@@ -153,7 +153,7 @@ public class IndexController extends BaseController {
      */
     @RequestMapping("logout")
     public void logout(HttpSession session, HttpServletResponse response) {
-        TaleUtils.logout(session, response);
+        CommonUtils.logout(session, response);
     }
 
     /**
@@ -185,7 +185,7 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail("姓名过长");
         }
 
-        if (StringUtils.isNotBlank(mail) && !TaleUtils.isEmail(mail)) {
+        if (StringUtils.isNotBlank(mail) && !CommonUtils.isEmail(mail)) {
             return RestResponseBo.fail("请输入正确的邮箱格式");
         }
 
@@ -203,8 +203,8 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail("您发表评论太快了，请过会再试");
         }
 
-        author = TaleUtils.cleanXSS(author);
-        text = TaleUtils.cleanXSS(text);
+        author = CommonUtils.cleanXSS(author);
+        text = CommonUtils.cleanXSS(text);
 
         author = EmojiParser.parseToAliases(author);
         text = EmojiParser.parseToAliases(text);

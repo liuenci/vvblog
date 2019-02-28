@@ -11,7 +11,7 @@ import com.liuenci.vblog.model.vo.ContentVo;
 import com.liuenci.vblog.service.ICommentService;
 import com.liuenci.vblog.service.IContentService;
 import com.liuenci.vblog.utils.DateKit;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +42,7 @@ public class CommentServiceImpl implements ICommentService {
         if (StringUtils.isBlank(comments.getAuthor())) {
             comments.setAuthor("热心网友");
         }
-        if (StringUtils.isNotBlank(comments.getMail()) && !TaleUtils.isEmail(comments.getMail())) {
+        if (StringUtils.isNotBlank(comments.getMail()) && !CommonUtils.isEmail(comments.getMail())) {
             throw new TipException("请输入正确的邮箱格式");
         }
         if (StringUtils.isBlank(comments.getContent())) {

@@ -2,7 +2,7 @@ package com.liuenci.vblog.controller;
 
 import com.liuenci.vblog.model.vo.UserVo;
 import com.liuenci.vblog.utils.MapCache;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,7 +41,7 @@ public abstract class BaseController {
      * @return
      */
     public UserVo user(HttpServletRequest request) {
-        return TaleUtils.getLoginUser(request);
+        return CommonUtils.getLoginUser(request);
     }
 
     /**

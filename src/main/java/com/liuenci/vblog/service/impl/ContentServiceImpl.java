@@ -10,7 +10,7 @@ import com.liuenci.vblog.model.vo.ContentVoExample;
 import com.liuenci.vblog.service.IContentService;
 import com.liuenci.vblog.service.IRelationshipService;
 import com.liuenci.vblog.utils.DateKit;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.utils.Tools;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.exception.TipException;
@@ -69,7 +69,7 @@ public class ContentServiceImpl implements IContentService {
             if (contents.getSlug().length() < 5) {
                 throw new TipException("路径太短了");
             }
-            if (!TaleUtils.isPath(contents.getSlug())) throw new TipException("您输入的路径不合法");
+            if (!CommonUtils.isPath(contents.getSlug())) throw new TipException("您输入的路径不合法");
             ContentVoExample contentVoExample = new ContentVoExample();
             contentVoExample.createCriteria().andTypeEqualTo(contents.getType()).andStatusEqualTo(contents.getSlug());
             long count = contentDao.countByExample(contentVoExample);

@@ -16,7 +16,7 @@ import com.liuenci.vblog.model.bo.StatisticsBo;
 import com.liuenci.vblog.model.vo.*;
 import com.liuenci.vblog.service.ISiteService;
 import com.liuenci.vblog.utils.DateKit;
-import com.liuenci.vblog.utils.TaleUtils;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.utils.ZipUtils;
 import com.liuenci.vblog.utils.backup.Backup;
 import org.apache.commons.lang3.StringUtils;
@@ -93,7 +93,7 @@ public class SiteServiceImpl implements ISiteService {
             String bkAttachDir = AttachController.CLASSPATH + "upload";
             String bkThemesDir = AttachController.CLASSPATH + "templates/themes";
 
-            String fname = DateKit.dateFormat(new Date(), fmt) + "_" + TaleUtils.getRandomNumber(5) + ".zip";
+            String fname = DateKit.dateFormat(new Date(), fmt) + "_" + CommonUtils.getRandomNumber(5) + ".zip";
 
             String attachPath = bk_path + "/" + "attachs_" + fname;
             String themesPath = bk_path + "/" + "themes_" + fname;
@@ -113,10 +113,10 @@ public class SiteServiceImpl implements ISiteService {
                     file.mkdirs();
                 }
             }
-            String sqlFileName = "tale_" + DateKit.dateFormat(new Date(), fmt) + "_" + TaleUtils.getRandomNumber(5) + ".sql";
+            String sqlFileName = "tale_" + DateKit.dateFormat(new Date(), fmt) + "_" + CommonUtils.getRandomNumber(5) + ".sql";
             String zipFile = sqlFileName.replace(".sql", ".zip");
 
-            Backup backup = new Backup(TaleUtils.getNewDataSource().getConnection());
+            Backup backup = new Backup(CommonUtils.getNewDataSource().getConnection());
             String sqlContent = backup.execute();
 
             File sqlFile = new File(bkAttachDir + sqlFileName);
