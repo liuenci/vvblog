@@ -1,7 +1,7 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.Vo.CommentVo;
-import com.liuenci.vblog.modal.Vo.CommentVoExample;
+import com.liuenci.vblog.modal.vo.CommentVo;
+import com.liuenci.vblog.modal.vo.CommentVoExample;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

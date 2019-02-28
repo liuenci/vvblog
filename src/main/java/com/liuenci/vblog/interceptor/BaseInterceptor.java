@@ -1,7 +1,7 @@
 package com.liuenci.vblog.interceptor;
 
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.Vo.UserVo;
+import com.liuenci.vblog.modal.vo.UserVo;
 import com.liuenci.vblog.utils.*;
 import com.liuenci.vblog.service.IUserService;
 import com.liuenci.vblog.constant.WebConst;

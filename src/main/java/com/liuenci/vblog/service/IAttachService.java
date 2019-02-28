@@ -1,10 +1,11 @@
 package com.liuenci.vblog.service;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.Vo.AttachVo;
+import com.liuenci.vblog.modal.vo.AttachVo;
+
 
 /**
- * Created by wangq on 2017/3/20.
+ * @author liuenci
  */
 public interface IAttachService {
     /**

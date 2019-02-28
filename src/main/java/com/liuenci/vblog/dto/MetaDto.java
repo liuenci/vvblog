@@ -1,6 +1,6 @@
 package com.liuenci.vblog.dto;
 
-import com.liuenci.vblog.modal.Vo.MetaVo;
+import com.liuenci.vblog.modal.vo.MetaVo;
 
 public class MetaDto extends MetaVo {
 

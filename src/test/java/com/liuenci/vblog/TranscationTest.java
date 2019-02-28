@@ -1,6 +1,6 @@
 package com.liuenci.vblog;
 
-import com.liuenci.vblog.modal.Vo.UserVo;
+import com.liuenci.vblog.modal.vo.UserVo;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.IUserService;
 import com.liuenci.vblog.service.IOptionService;

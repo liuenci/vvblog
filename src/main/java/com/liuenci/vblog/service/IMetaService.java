@@ -1,13 +1,13 @@
 package com.liuenci.vblog.service;
 
 import com.liuenci.vblog.dto.MetaDto;
-import com.liuenci.vblog.modal.Vo.MetaVo;
+import com.liuenci.vblog.modal.vo.MetaVo;
 
 import java.util.List;
 
 /**
  * 分类信息service接口
- * Created by BlueT on 2017/3/17.
+ * @author liuenci
  */
 public interface IMetaService {
     /**

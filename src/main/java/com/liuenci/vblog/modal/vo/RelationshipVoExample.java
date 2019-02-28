@@ -1,8 +1,17 @@
-package com.liuenci.vblog.modal.Vo;
+package com.liuenci.vblog.modal.vo;
+
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author liuenci
+ */
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
 public class RelationshipVoExample {
     protected String orderByClause;
 
@@ -18,21 +27,6 @@ public class RelationshipVoExample {
         oredCriteria = new ArrayList<Criteria>();
     }
 
-    public void setOrderByClause(String orderByClause) {
-        this.orderByClause = orderByClause;
-    }
-
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
-    public void setDistinct(boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    public boolean isDistinct() {
-        return distinct;
-    }
 
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
@@ -67,21 +61,6 @@ public class RelationshipVoExample {
         distinct = false;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Integer getOffset() {
-        return offset;
-    }
 
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;

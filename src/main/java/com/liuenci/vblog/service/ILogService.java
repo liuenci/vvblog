@@ -1,11 +1,12 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.Vo.LogVo;
+import com.liuenci.vblog.modal.vo.LogVo;
 
 import java.util.List;
 
+
 /**
- * Created by BlueT on 2017/3/4.
+ * @author liuenci
  */
 public interface ILogService {
 

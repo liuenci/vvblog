@@ -5,8 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.dao.ContentVoMapper;
 import com.liuenci.vblog.dao.MetaVoMapper;
 import com.liuenci.vblog.dto.Types;
-import com.liuenci.vblog.modal.Vo.ContentVo;
-import com.liuenci.vblog.modal.Vo.ContentVoExample;
+import com.liuenci.vblog.modal.vo.ContentVo;
+import com.liuenci.vblog.modal.vo.ContentVoExample;
 import com.liuenci.vblog.service.IContentService;
 import com.liuenci.vblog.service.IRelationshipService;
 import com.liuenci.vblog.utils.DateKit;
@@ -25,7 +25,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/3/13 013.
+ * @author liuenci
  */
 @Service
 public class ContentServiceImpl implements IContentService {

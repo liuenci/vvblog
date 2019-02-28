@@ -1,11 +1,12 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.Vo.RelationshipVoKey;
+import com.liuenci.vblog.modal.vo.RelationshipVoKey;
 
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/18.
+ *
+ * @author liuenci
  */
 public interface IRelationshipService {
     /**

@@ -4,15 +4,14 @@ import com.liuenci.vblog.dto.MetaDto;
 import com.liuenci.vblog.modal.bo.ArchiveBo;
 import com.liuenci.vblog.modal.bo.BackResponseBo;
 import com.liuenci.vblog.modal.bo.StatisticsBo;
-import com.liuenci.vblog.modal.Vo.CommentVo;
-import com.liuenci.vblog.modal.Vo.ContentVo;
+import com.liuenci.vblog.modal.vo.CommentVo;
+import com.liuenci.vblog.modal.vo.ContentVo;
 
 import java.util.List;
 
 /**
  * 站点服务
- *
- * Created by 13 on 2017/2/23.
+ * @author liuenci
  */
 public interface ISiteService {
 

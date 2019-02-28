@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.OptionVoMapper;
-import com.liuenci.vblog.modal.Vo.OptionVo;
-import com.liuenci.vblog.modal.Vo.OptionVoExample;
+import com.liuenci.vblog.modal.vo.OptionVo;
+import com.liuenci.vblog.modal.vo.OptionVoExample;
 import com.liuenci.vblog.service.IOptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * options表的service
- * Created by BlueT on 2017/3/7.
+ * @author liuenci
  */
 @Service
 public class OptionServiceImpl implements IOptionService {

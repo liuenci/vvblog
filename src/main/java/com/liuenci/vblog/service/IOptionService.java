@@ -1,13 +1,13 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.Vo.OptionVo;
+import com.liuenci.vblog.modal.vo.OptionVo;
 
 import java.util.List;
 import java.util.Map;
 
 /**
  * options的接口
- * Created by BlueT on 2017/3/7.
+ * @author liuenci
  */
 public interface IOptionService {
 

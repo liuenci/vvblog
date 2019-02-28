@@ -1,19 +1,14 @@
 package com.liuenci.vblog.service;
 
 import com.github.pagehelper.PageInfo;
-import com.liuenci.vblog.modal.Vo.ContentVoExample;
-import com.liuenci.vblog.modal.Vo.ContentVo;
+import com.liuenci.vblog.modal.vo.ContentVoExample;
+import com.liuenci.vblog.modal.vo.ContentVo;
+
 
 /**
- * Created by Administrator on 2017/3/13 013.
+ * @author liuenci
  */
 public interface IContentService {
-
-//    /**
-//     * 保存文章
-//     * @param contentVo contentVo
-//     */
-//    void insertContent(ContentVo contentVo);
 
     /**
      * 发布文章

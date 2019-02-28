@@ -1,6 +1,6 @@
 package com.liuenci.vblog.controller;
 
-import com.liuenci.vblog.modal.Vo.UserVo;
+import com.liuenci.vblog.modal.vo.UserVo;
 import com.liuenci.vblog.utils.MapCache;
 import com.liuenci.vblog.utils.TaleUtils;
 

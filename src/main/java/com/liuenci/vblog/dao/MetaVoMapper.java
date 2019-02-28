@@ -1,8 +1,8 @@
 package com.liuenci.vblog.dao;
 
 import com.liuenci.vblog.dto.MetaDto;
-import com.liuenci.vblog.modal.Vo.MetaVo;
-import com.liuenci.vblog.modal.Vo.MetaVoExample;
+import com.liuenci.vblog.modal.vo.MetaVo;
+import com.liuenci.vblog.modal.vo.MetaVoExample;
 
 import java.util.List;
 import java.util.Map;

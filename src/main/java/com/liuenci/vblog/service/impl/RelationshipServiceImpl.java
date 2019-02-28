@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.RelationshipVoMapper;
-import com.liuenci.vblog.modal.Vo.RelationshipVoExample;
-import com.liuenci.vblog.modal.Vo.RelationshipVoKey;
+import com.liuenci.vblog.modal.vo.RelationshipVoExample;
+import com.liuenci.vblog.modal.vo.RelationshipVoKey;
 import com.liuenci.vblog.service.IRelationshipService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/18.
+ * @author liuenci
  */
 @Service
 public class RelationshipServiceImpl implements IRelationshipService {

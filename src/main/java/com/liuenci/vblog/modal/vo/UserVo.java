@@ -1,4 +1,4 @@
-package com.liuenci.vblog.modal.Vo;
+package com.liuenci.vblog.modal.vo;
 
 import java.io.Serializable;
 

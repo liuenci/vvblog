@@ -1,9 +1,10 @@
 package com.liuenci.vblog.service;
 
-import com.liuenci.vblog.modal.Vo.UserVo;
+import com.liuenci.vblog.modal.vo.UserVo;
 
 /**
- * Created by BlueT on 2017/3/3.
+ *
+ * @author liuenci
  */
 public interface IUserService {
 

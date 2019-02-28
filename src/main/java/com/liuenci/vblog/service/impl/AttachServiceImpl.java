@@ -3,8 +3,8 @@ package com.liuenci.vblog.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.dao.AttachVoMapper;
-import com.liuenci.vblog.modal.Vo.AttachVo;
-import com.liuenci.vblog.modal.Vo.AttachVoExample;
+import com.liuenci.vblog.modal.vo.AttachVo;
+import com.liuenci.vblog.modal.vo.AttachVoExample;
 import com.liuenci.vblog.service.IAttachService;
 import com.liuenci.vblog.utils.DateKit;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by wangq on 2017/3/20.
+ * @author liuenci
  */
 @Service
 public class AttachServiceImpl implements IAttachService {

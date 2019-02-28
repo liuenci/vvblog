@@ -5,9 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.liuenci.vblog.dao.CommentVoMapper;
 import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.modal.bo.CommentBo;
-import com.liuenci.vblog.modal.Vo.CommentVo;
-import com.liuenci.vblog.modal.Vo.CommentVoExample;
-import com.liuenci.vblog.modal.Vo.ContentVo;
+import com.liuenci.vblog.modal.vo.CommentVo;
+import com.liuenci.vblog.modal.vo.CommentVoExample;
+import com.liuenci.vblog.modal.vo.ContentVo;
 import com.liuenci.vblog.service.ICommentService;
 import com.liuenci.vblog.service.IContentService;
 import com.liuenci.vblog.utils.DateKit;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/16.
+ * @author liuenci
  */
 @Service
 public class CommentServiceImpl implements ICommentService {

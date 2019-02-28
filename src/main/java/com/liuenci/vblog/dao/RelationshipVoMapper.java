@@ -1,7 +1,7 @@
 package com.liuenci.vblog.dao;
 
-import com.liuenci.vblog.modal.Vo.RelationshipVoExample;
-import com.liuenci.vblog.modal.Vo.RelationshipVoKey;
+import com.liuenci.vblog.modal.vo.RelationshipVoExample;
+import com.liuenci.vblog.modal.vo.RelationshipVoKey;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

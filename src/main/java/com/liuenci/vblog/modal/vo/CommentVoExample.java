@@ -1,8 +1,17 @@
-package com.liuenci.vblog.modal.Vo;
+package com.liuenci.vblog.modal.vo;
+
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author liuenci
+ */
+@Setter
+@Getter
+@AllArgsConstructor
+@ToString
 public class CommentVoExample {
     protected String orderByClause;
 

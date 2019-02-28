@@ -1,8 +1,8 @@
 package com.liuenci.vblog.service.impl;
 
 import com.liuenci.vblog.dao.UserVoMapper;
-import com.liuenci.vblog.modal.Vo.UserVo;
-import com.liuenci.vblog.modal.Vo.UserVoExample;
+import com.liuenci.vblog.modal.vo.UserVo;
+import com.liuenci.vblog.modal.vo.UserVoExample;
 import com.liuenci.vblog.service.IUserService;
 import com.liuenci.vblog.utils.TaleUtils;
 import com.liuenci.vblog.exception.TipException;
@@ -15,7 +15,8 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/3.
+ *
+ * @author liuenci
  */
 @Service
 public class UserServiceImpl implements IUserService {
