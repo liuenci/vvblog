@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.my.blog.website</groupId>
-    <artifactId>my-blog</artifactId>
+    <groupId>com.liuenci.vblog</groupId>
+    <artifactId>vblog</artifactId>
     <!-- now -->
     <version>3.0.1-SNAPSHOT</version>
 
     <packaging>war</packaging>
 
-    <name>my-blog</name>
-    <description>My Java Blog project for Spring Boot</description>
+    <name>vblog</name>
+    <description>vblog-毕业设计</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -160,6 +160,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
         </dependency>
     </dependencies>
 
