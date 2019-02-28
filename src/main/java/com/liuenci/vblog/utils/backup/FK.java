@@ -1,5 +1,8 @@
 package com.liuenci.vblog.utils.backup;
 
+/**
+ * @author liuenci
+ */
 public class FK {
     private String column;
     private Table referenceTable;

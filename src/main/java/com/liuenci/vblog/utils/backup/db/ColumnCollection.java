@@ -1,7 +1,12 @@
 package com.liuenci.vblog.utils.backup.db;
 
+import lombok.*;
+
 import java.util.ArrayList;
 
+/**
+ * @author liuenci
+ */
 public class ColumnCollection extends ArrayList<Column>{
 
 	private static final long serialVersionUID = -3399188477563370223L;

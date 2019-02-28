@@ -1,29 +1,19 @@
 package com.liuenci.vblog.utils.backup;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+/**
+ * @author liuenci
+ */
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Column {
 	private String name;
 	private String typeName;
 	private int dataType;
-
-	public String getName() {
-		return name;
-	}
-
-	public int getDataType() {
-		return dataType;
-	}
-	
-	public Column(String name, String typeName, int dataType) {
-		super();
-		this.name = name;
-		this.typeName = typeName;
-		this.dataType = dataType;
-	}
-
-	@Override
-	public String toString() {
-		return "Column [name=" + name + ", typeName=" + typeName
-				+ ", dataType=" + dataType + "]";
-	}
-
 }

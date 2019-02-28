@@ -6,6 +6,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * @author liuenci
+ */
 public class DataTable extends ArrayList<Row> {
 	/**
 	 * 

@@ -2,6 +2,9 @@ package com.liuenci.vblog.utils.backup.db;
 
 import java.util.Date;
 
+/**
+ * @author liuenci
+ */
 public class Row {
     private Object[] data;
     private DataTable dataTable;
