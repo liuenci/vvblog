@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Set;
 
 
+/**
+ * @author liuenci
+ */
 @Component
 public class WebConst {
     /**

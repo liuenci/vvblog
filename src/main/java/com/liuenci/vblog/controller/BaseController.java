@@ -6,8 +6,9 @@ import com.liuenci.vblog.utils.TaleUtils;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 /**
- * Created by 13 on 2017/2/21.
+ * @author liuenci
  */
 public abstract class BaseController {
 
@@ -43,10 +44,19 @@ public abstract class BaseController {
         return TaleUtils.getLoginUser(request);
     }
 
+    /**
+     * 获取请求绑定的登录对象的ID
+     * @param request
+     * @return
+     */
     public Integer getUid(HttpServletRequest request){
         return this.user(request).getUid();
     }
 
+    /**
+     * 不存在的路径，路由到 404 页面
+     * @return
+     */
     public String render_404() {
         return "comm/error_404";
     }
