@@ -15,6 +15,7 @@ import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.ILogService;
 import com.liuenci.vblog.service.IUserService;
 import com.liuenci.vblog.utils.GsonUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,8 +35,8 @@ import java.util.List;
 @Controller("adminIndexController")
 @RequestMapping("/admin")
 @Transactional(rollbackFor = TipException.class)
+@Slf4j
 public class IndexController extends BaseController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
 
     @Resource
     private ISiteService siteService;
@@ -52,7 +53,7 @@ public class IndexController extends BaseController {
      */
     @GetMapping(value = {"","/index"})
     public String index(HttpServletRequest request){
-        LOGGER.info("Enter admin index method");
+        log.info("Enter admin index method");
         List<CommentVo> comments = siteService.recentComments(5);
         List<ContentVo> contents = siteService.recentContents(5);
         StatisticsBo statistics = siteService.getStatistics();
@@ -63,7 +64,7 @@ public class IndexController extends BaseController {
         request.setAttribute("articles", contents);
         request.setAttribute("statistics", statistics);
         request.setAttribute("logs", logs);
-        LOGGER.info("Exit admin index method");
+        log.info("Exit admin index method");
         return "admin/index";
     }
 
@@ -149,7 +150,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                LOGGER.error(msg, e);
+                log.error(msg, e);
             }
             return RestResponseBo.fail(msg);
         }
