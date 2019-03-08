@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: vblog
-Implementation-Version: 1
-Built-By: liuenci
-Implementation-Vendor-Id: com.liuenci.vblog
-Created-By: IntelliJ IDEA
-Build-Jdk: 1.8
-Main-Class: ${start-class}
-
