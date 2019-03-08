@@ -393,6 +393,7 @@ public final class Commons {
         return EmojiParser.parseToUnicode(value);
     }
 
+    private static final Pattern pattern = Pattern.compile("src\\s*=\\s*\'?\"?(.*?)(\'|\"|>|\\s+)");
     /**
      * 获取文章第一张图片
      *
@@ -408,7 +409,7 @@ public final class Commons {
             if (m_image.find()) {
                 img = img + "," + m_image.group();
                 // //匹配src
-                Matcher m = Pattern.compile("src\\s*=\\s*\'?\"?(.*?)(\'|\"|>|\\s+)").matcher(img);
+                Matcher m = pattern.matcher(img);
                 if (m.find()) {
                     return m.group(1);
                 }
