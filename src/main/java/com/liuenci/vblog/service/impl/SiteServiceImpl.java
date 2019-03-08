@@ -19,6 +19,7 @@ import com.liuenci.vblog.utils.DateKit;
 import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.utils.ZipUtils;
 import com.liuenci.vblog.utils.backup.Backup;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,7 @@ import java.util.*;
  * @author liuenci
  */
 @Service
+@Slf4j
 public class SiteServiceImpl implements ISiteService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SiteServiceImpl.class);
@@ -136,7 +138,12 @@ public class SiteServiceImpl implements ISiteService {
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    new File(zip).delete();
+                    boolean flag = new File(zip).delete();
+                    if (flag) {
+                        log.info("删除备份文件成功");
+                    } else {
+                        log.info("删除备份文件失败");
+                    }
                 }
             }, 10 * 1000);
         }

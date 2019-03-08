@@ -4,6 +4,7 @@ import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.controller.admin.AttachController;
 import com.liuenci.vblog.model.vo.UserVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
@@ -32,6 +33,7 @@ import java.util.regex.Pattern;
  * Tale工具类
  * @author liuenci
  */
+@Slf4j
 public class CommonUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(CommonUtils.class);
 
@@ -181,20 +183,22 @@ public class CommonUtils {
      * @return
      */
     public static DataSource getNewDataSource() {
-        if (newDataSource == null) synchronized (CommonUtils.class) {
-            if (newDataSource == null) {
-                Properties properties = CommonUtils.getPropFromFile("application-jdbc.properties");
-                if (properties.size() == 0) {
-                    return newDataSource;
+        if (newDataSource == null) {
+            synchronized (CommonUtils.class) {
+                if (newDataSource == null) {
+                    Properties properties = CommonUtils.getPropFromFile("application-jdbc.properties");
+                    if (properties.size() == 0) {
+                        return newDataSource;
+                    }
+                    DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
+                    //        TODO 对不同数据库支持
+                    managerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+                    managerDataSource.setPassword(properties.getProperty("spring.datasource.password"));
+                    String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+                    managerDataSource.setUrl(str);
+                    managerDataSource.setUsername(properties.getProperty("spring.datasource.username"));
+                    newDataSource = managerDataSource;
                 }
-                DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
-                //        TODO 对不同数据库支持
-                managerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-                managerDataSource.setPassword(properties.getProperty("spring.datasource.password"));
-                String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false";
-                managerDataSource.setUrl(str);
-                managerDataSource.setUsername(properties.getProperty("spring.datasource.username"));
-                newDataSource = managerDataSource;
             }
         }
         return newDataSource;
@@ -423,7 +427,12 @@ public class CommonUtils {
     public static String getFileKey(String name) {
         String prefix = "/upload/" + DateKit.dateFormat(new Date(), "yyyy/MM");
         if (!new File(AttachController.CLASSPATH + prefix).exists()) {
-            new File(AttachController.CLASSPATH + prefix).mkdirs();
+            boolean flag = new File(AttachController.CLASSPATH + prefix).mkdirs();
+            if (flag) {
+                log.info("创建文件夹成功");
+            }else {
+                log.info("创建文件夹失败");
+            }
         }
 
         name = StringUtils.trimToNull(name);

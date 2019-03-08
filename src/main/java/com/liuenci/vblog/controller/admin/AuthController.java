@@ -40,6 +40,10 @@ public class AuthController extends BaseController {
     @Resource
     private ILogService logService;
 
+    /**
+     * 跳转到登录页面
+     * @return
+     */
     @GetMapping(value = "/login")
     public String login() {
         return "admin/login";
@@ -47,35 +51,35 @@ public class AuthController extends BaseController {
 
     /**
      * 管理后台登录
-     * @param username
-     * @param password
-     * @param remeber_me
-     * @param request
-     * @param response
+     * @param username 用户名
+     * @param password 密码
+     * @param remeberMe 记住我
+     * @param request 请求
+     * @param response 响应
      * @return
      */
     @PostMapping(value = "login")
     @ResponseBody
     public RestResponseBo doLogin(@RequestParam String username,
                                   @RequestParam String password,
-                                  @RequestParam(required = false) String remeber_me,
+                                  @RequestParam(required = false) String remeberMe,
                                   HttpServletRequest request,
                                   HttpServletResponse response) {
-
-        Integer error_count = cache.get("login_error_count");
+        // 登录失败的次数
+        Integer errorCount = cache.get("login_error_count");
         try {
             UserVo user = usersService.login(username, password);
             request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
-            if (StringUtils.isNotBlank(remeber_me)) {
+            if (StringUtils.isNotBlank(remeberMe)) {
                 CommonUtils.setCookie(response, user.getUid());
             }
             logService.insertLog(LogActions.LOGIN.getAction(), null, request.getRemoteAddr(), user.getUid());
         } catch (Exception e) {
-            error_count = null == error_count ? 1 : error_count + 1;
-            if (error_count > 3) {
+            errorCount = null == errorCount ? 1 : errorCount + 1;
+            if (errorCount > 3) {
                 return RestResponseBo.fail("您输入密码已经错误超过3次，请10分钟后尝试");
             }
-            cache.set("login_error_count", error_count, 10 * 60);
+            cache.set("login_error_count", errorCount, 10 * 60);
             String msg = "登录失败";
             if (e instanceof TipException) {
                 msg = e.getMessage();
