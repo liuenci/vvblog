@@ -74,7 +74,7 @@ public class CommonUtils {
      * @return
      */
     public static int getCurrentTime() {
-        return (int) (new Date().getTime() / 1000);
+        return (int) (System.currentTimeMillis() / 1000);
     }
 
     /**
