@@ -1,24 +1,22 @@
 package com.liuenci.vblog.controller.admin;
 
+import com.liuenci.vblog.constant.WebConst;
+import com.liuenci.vblog.controller.BaseController;
 import com.liuenci.vblog.dto.LogActions;
+import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.model.bo.RestResponseBo;
 import com.liuenci.vblog.model.bo.StatisticsBo;
 import com.liuenci.vblog.model.vo.CommentVo;
 import com.liuenci.vblog.model.vo.ContentVo;
 import com.liuenci.vblog.model.vo.LogVo;
 import com.liuenci.vblog.model.vo.UserVo;
-import com.liuenci.vblog.utils.CommonUtils;
-import com.liuenci.vblog.service.ISiteService;
-import com.liuenci.vblog.constant.WebConst;
-import com.liuenci.vblog.controller.BaseController;
-import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.service.ILogService;
+import com.liuenci.vblog.service.ISiteService;
 import com.liuenci.vblog.service.IUserService;
+import com.liuenci.vblog.utils.CommonUtils;
 import com.liuenci.vblog.utils.GsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -75,17 +73,6 @@ public class IndexController extends BaseController {
     public String profile() {
         return "admin/profile";
     }
-
-    /**
-     * admin 退出登录
-     * @return
-     */
-    @GetMapping(value = "logout")
-    public String logout() {
-        System.out.println("index-----------logout");
-        return "admin/login";
-    }
-
 
     /**
      * 保存个人信息

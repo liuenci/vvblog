@@ -99,7 +99,7 @@ public class AuthController extends BaseController {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         try {
-            response.sendRedirect(Commons.site_login());
+            response.sendRedirect("login");
         } catch (IOException e) {
             e.printStackTrace();
             log.error("注销失败", e);
