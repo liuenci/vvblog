@@ -95,6 +95,7 @@ public class IndexController extends BaseController {
      */
     @GetMapping(value = {"article/{cid}", "article/{cid}.html"})
     public String getArticle(HttpServletRequest request, @PathVariable String cid) {
+        // 通过文章 cid 查询文章的内容
         ContentVo contents = contentService.getContents(cid);
         // 判断内容是否为空，或者是草稿文章
         if (null == contents || DRAFT.equals(contents.getStatus())) {
