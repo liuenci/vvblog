@@ -108,7 +108,7 @@ public class SiteServiceImpl implements ISiteService {
         }
         if ("db".equals(bkType)) {
 
-            String bkAttachDir = AttachController.CLASSPATH + "upload/";
+            String bkAttachDir = CommonUtils.getUplodFilePath() + "upload/";
             if (!(new File(bkAttachDir)).isDirectory()) {
                 File file = new File(bkAttachDir);
                 if (!file.exists()) {
@@ -135,17 +135,17 @@ public class SiteServiceImpl implements ISiteService {
             backResponse.setSqlPath(zipFile);
 
             // 10秒后删除备份文件
-            new Timer().schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    boolean flag = new File(zip).delete();
-                    if (flag) {
-                        log.info("删除备份文件成功");
-                    } else {
-                        log.info("删除备份文件失败");
-                    }
-                }
-            }, 10 * 1000);
+//            new Timer().schedule(new TimerTask() {
+//                @Override
+//                public void run() {
+//                    boolean flag = new File(zip).delete();
+//                    if (flag) {
+//                        log.info("删除备份文件成功");
+//                    } else {
+//                        log.info("删除备份文件失败");
+//                    }
+//                }
+//            }, 10 * 1000);
         }
         return backResponse;
     }

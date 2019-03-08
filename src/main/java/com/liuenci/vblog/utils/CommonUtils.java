@@ -1,8 +1,8 @@
 package com.liuenci.vblog.utils;
 
-import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.constant.WebConst;
 import com.liuenci.vblog.controller.admin.AttachController;
+import com.liuenci.vblog.exception.TipException;
 import com.liuenci.vblog.model.vo.UserVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -31,6 +31,7 @@ import java.util.regex.Pattern;
 
 /**
  * Tale工具类
+ *
  * @author liuenci
  */
 @Slf4j
@@ -141,10 +142,16 @@ public class CommonUtils {
     private static Properties getPropFromFile(String fileName) {
         Properties properties = new Properties();
         try {
-//            默认是classPath路径
-            InputStream resourceAsStream = new FileInputStream(fileName);
-            properties.load(resourceAsStream);
-        } catch (TipException | IOException e) {
+//            InputStream resourceAsStream = new FileInputStream(fileName);
+//            properties.load(resourceAsStream);
+//            resourceAsStream.close();
+            properties = new Properties();
+            try {
+                properties.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName), "UTF-8"));
+            } catch (IOException e) {
+                log.error("配置文件读取异常", e);
+            }
+        } catch (TipException e) {
             LOGGER.error("get properties file fail={}", e.getMessage());
         }
         return properties;
@@ -184,22 +191,12 @@ public class CommonUtils {
      */
     public static DataSource getNewDataSource() {
         if (newDataSource == null) {
-            synchronized (CommonUtils.class) {
-                if (newDataSource == null) {
-                    Properties properties = CommonUtils.getPropFromFile("application-jdbc.properties");
-                    if (properties.size() == 0) {
-                        return newDataSource;
-                    }
-                    DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
-                    //        TODO 对不同数据库支持
-                    managerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-                    managerDataSource.setPassword(properties.getProperty("spring.datasource.password"));
-                    String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false";
-                    managerDataSource.setUrl(str);
-                    managerDataSource.setUsername(properties.getProperty("spring.datasource.username"));
-                    newDataSource = managerDataSource;
-                }
-            }
+            DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
+            managerDataSource.setDriverClassName(PropertiesUtil.getProperty("spring.datasource.driverClassName"));
+            managerDataSource.setUsername(PropertiesUtil.getProperty("spring.datasource.username"));
+            managerDataSource.setPassword(PropertiesUtil.getProperty("spring.datasource.password"));
+            managerDataSource.setUrl(PropertiesUtil.getProperty("spring.datasource.url"));
+            newDataSource = managerDataSource;
         }
         return newDataSource;
     }
@@ -270,7 +267,7 @@ public class CommonUtils {
             boolean isSSL = false;
             Cookie cookie = new Cookie(WebConst.USER_IN_COOKIE, val);
             cookie.setPath("/");
-            cookie.setMaxAge(60*30);
+            cookie.setMaxAge(60 * 30);
             cookie.setSecure(isSSL);
             response.addCookie(cookie);
         } catch (Exception e) {
@@ -422,7 +419,7 @@ public class CommonUtils {
             boolean flag = new File(AttachController.CLASSPATH + prefix).mkdirs();
             if (flag) {
                 log.info("创建文件夹成功");
-            }else {
+            } else {
                 log.info("创建文件夹失败");
             }
         }

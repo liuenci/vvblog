@@ -108,7 +108,6 @@
                     </div>
 
                     <div class="clearfix"></div>
-
                     <div class="col-md-6">
                         <div class="panel panel-color panel-success">
                             <div class="panel-heading">
@@ -199,21 +198,23 @@
      */
     function backup(type) {
         var param = {
-            bk_type: type,
-            bk_path: $('#backup_dir').val()
+            bkType: type,
+            bkPath: $('#backup_dir').val()
         };
         tale.post({
             url : '/admin/setting/backup',
             data: param,
             success: function (result) {
                 if(result && result.success){
-                    if(result.payload && result.payload.attach_path){
-                        swal('备份成功', '您的附件备份在 <mark>'+ result.payload.attach_path +'</mark><br/><br/>' +
-                            '主题备份存储在 <mark>'+ result.payload.theme_path +'</mark>', 'success');
+                    // 备份文件的处理
+                    if(result.payload && result.payload.attachPath){
+                        swal('备份成功', '您的附件备份在 <mark>'+ result.payload.attachPath +'</mark><br/><br/>' +
+                            '主题备份存储在 <mark>'+ result.payload.themePath +'</mark>', 'success');
                         $('#backup_dir').val('');
                     }
-                    if(result.payload.sql_path){
-                        window.location.href = '/upload/' + result.payload.sql_path;
+                    // 备份 SQL 的处理
+                    if(result.payload.sqlPath){
+                        window.location.href = '/upload/' + result.payload.sqlPath;
                     }
                 } else {
                     tale.alertError(result.msg || '备份失败');
