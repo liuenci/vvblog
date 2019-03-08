@@ -5,16 +5,49 @@ package com.liuenci.vblog.dto;
  */
 
 public enum Types {
+    /**
+     * tag
+     */
     TAG("tag"),
+    /**
+     * category
+     */
     CATEGORY("category"),
+    /**
+     * post
+     */
     ARTICLE("post"),
+    /**
+     * publish
+     */
     PUBLISH("publish"),
+    /**
+     * page
+     */
     PAGE("page"),
+    /**
+     * draft
+     */
     DRAFT("draft"),
+    /**
+     * link
+     */
     LINK("link"),
+    /**
+     * image
+     */
     IMAGE("image"),
+    /**
+     * file
+     */
     FILE("file"),
+    /**
+     * csrf_token
+     */
     CSRF_TOKEN("csrf_token"),
+    /**
+     * comments:frequency
+     */
     COMMENTS_FREQUENCY("comments:frequency"),
 
     /**

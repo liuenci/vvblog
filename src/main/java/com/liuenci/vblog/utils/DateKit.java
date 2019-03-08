@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Created by Administrator on 2017/3/10 010.
+ * @author liuenci
  */
 public class DateKit {
     public static final int INTERVAL_DAY = 1;
@@ -17,7 +17,7 @@ public class DateKit {
     public static final int INTERVAL_HOUR = 5;
     public static final int INTERVAL_MINUTE = 6;
     public static final int INTERVAL_SECOND = 7;
-    public static final Date tempDate = new Date((new Long("-2177481952000")).longValue());
+    public static final Date TEMP_DATE = new Date((new Long("-2177481952000")).longValue());
     private static List<SimpleDateFormat> dateFormats = new ArrayList(12) {
         private static final long serialVersionUID = 2249396579858199535L;
 
@@ -49,7 +49,7 @@ public class DateKit {
         return result;
     }
 
-    public static long DaysBetween(Date date1, Date date2) {
+    public static long daysbetween(Date date1, Date date2) {
         if(date2 == null) {
             date2 = new Date();
         }
@@ -103,7 +103,7 @@ public class DateKit {
     public static String birthdayFormat(Date date) {
         if(date != null) {
             SimpleDateFormat format = null;
-            if(date.before(tempDate)) {
+            if(date.before(TEMP_DATE)) {
                 format = new SimpleDateFormat("MM-dd");
             } else {
                 format = new SimpleDateFormat("yyyy-MM-dd");

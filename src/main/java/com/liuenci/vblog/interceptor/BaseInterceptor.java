@@ -60,11 +60,11 @@ public class BaseInterceptor implements HandlerInterceptor {
             return false;
         }
         //设置get请求的token
-        if (request.getMethod().equals("GET")) {
-            String csrf_token = UUID.UU64();
+        if ("GET".equals(request.getMethod())) {
+            String csrfToken = UUID.UU64();
             // 默认存储30分钟
-            cache.hset(Types.CSRF_TOKEN.getType(), csrf_token, uri, 30 * 60);
-            request.setAttribute("_csrf_token", csrf_token);
+            cache.hset(Types.CSRF_TOKEN.getType(), csrfToken, uri, 30 * 60);
+            request.setAttribute("_csrf_token", csrfToken);
         }
         return true;
     }

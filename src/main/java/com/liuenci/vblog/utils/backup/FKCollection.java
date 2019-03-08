@@ -2,11 +2,11 @@ package com.liuenci.vblog.utils.backup;
 
 import java.util.ArrayList;
 
+/**
+ * @author liuenci
+ */
 public class FKCollection extends ArrayList<FK>{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -972085209611643212L;
 	
 	public boolean isReferenced(Table referenceTable){

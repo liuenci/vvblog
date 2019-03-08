@@ -8,7 +8,7 @@ import java.util.Enumeration;
 
 /**
  * ip工具类
- * Created by BlueT on 2017/3/9.
+ * @author liuenci
  */
 public class IPKit {
     /**
@@ -34,22 +34,27 @@ public class IPKit {
      * @throws SocketException
      */
     public static String getRealIp() throws SocketException {
-        String localip = null;// 本地IP，如果没有配置外网IP则返回它
-        String netip = null;// 外网IP
+        // 本地IP，如果没有配置外网IP则返回它
+        String localip = null;
+        // 外网IP
+        String netip = null;
 
         Enumeration<NetworkInterface> netInterfaces = NetworkInterface.getNetworkInterfaces();
         InetAddress ip = null;
-        boolean finded = false;// 是否找到外网IP
+        // 是否找到外网IP
+        boolean finded = false;
         while (netInterfaces.hasMoreElements() && !finded) {
             NetworkInterface ni = netInterfaces.nextElement();
             Enumeration<InetAddress> address = ni.getInetAddresses();
             while (address.hasMoreElements()) {
                 ip = address.nextElement();
-                if (!ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && !ip.getHostAddress().contains(":")) {// 外网IP
+                // 外网IP
+                if (!ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && !ip.getHostAddress().contains(":")) {
                     netip = ip.getHostAddress();
                     finded = true;
                     break;
-                } else if (ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && !ip.getHostAddress().contains(":")) {// 内网IP
+                } else if (ip.isSiteLocalAddress() && !ip.isLoopbackAddress() && !ip.getHostAddress().contains(":")) {
+                    // 内网IP
                     localip = ip.getHostAddress();
                 }
             }

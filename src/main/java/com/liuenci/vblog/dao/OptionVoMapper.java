@@ -8,6 +8,9 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author liuenci
+ */
 @Component
 public interface OptionVoMapper {
     long countByExample(OptionVoExample example);

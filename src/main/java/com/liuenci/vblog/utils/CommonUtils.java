@@ -41,7 +41,7 @@ public class CommonUtils {
     /**
      * 一个月
      */
-    private static final int one_month = 30 * 24 * 60 * 60;
+    private static final int ONE_MONTH = 30 * 24 * 60 * 60;
     /**
      * 匹配邮箱正则
      */
@@ -306,14 +306,6 @@ public class CommonUtils {
         String content = renderer.render(document);
         content = Commons.emoji(content);
 
-        // TODO 支持网易云音乐输出
-//        if (TaleConst.BCONF.getBoolean("app.support_163_music", true) && content.contains("[mp3:")) {
-//            content = content.replaceAll("\\[mp3:(\\d+)\\]", "<iframe frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" width=350 height=106 src=\"//music.163.com/outchain/player?type=2&id=$1&auto=0&height=88\"></iframe>");
-//        }
-        // 支持gist代码输出
-//        if (TaleConst.BCONF.getBoolean("app.support_gist", true) && content.contains("https://gist.github.com/")) {
-//            content = content.replaceAll("&lt;script src=\"https://gist.github.com/(\\w+)/(\\w+)\\.js\">&lt;/script>", "<script src=\"https://gist.github.com/$1/$2\\.js\"></script>");
-//        }
         return content;
     }
 
@@ -329,7 +321,7 @@ public class CommonUtils {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         try {
-            response.sendRedirect(Commons.site_url());
+            response.sendRedirect(Commons.siteUrl());
         } catch (IOException e) {
             LOGGER.error(e.getMessage(), e);
         }

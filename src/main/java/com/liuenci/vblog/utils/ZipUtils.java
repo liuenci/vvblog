@@ -8,6 +8,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * zip压缩工具类
+ * @author liuenci
  */
 public class ZipUtils {
 
@@ -61,7 +62,7 @@ public class ZipUtils {
         File folder = new File(srcFolder);
         if (null != path && folder.isDirectory()) {
             for (String fileName : folder.list()) {
-                if (path.equals("")) {
+                if ("".equals(path)) {
                     addFileToZip(folder.getName(), srcFolder + "/" + fileName, zip);
                 } else {
                     addFileToZip(path + "/" + folder.getName(), srcFolder + "/" + fileName, zip);

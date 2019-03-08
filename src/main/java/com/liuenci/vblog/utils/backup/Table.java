@@ -1,6 +1,9 @@
 package com.liuenci.vblog.utils.backup;
 
 
+/**
+ * @author liuenci
+ */
 public class Table {
 	private String name;
 	private ColumnCollection columns;

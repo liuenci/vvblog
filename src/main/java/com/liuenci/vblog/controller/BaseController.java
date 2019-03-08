@@ -57,7 +57,7 @@ public abstract class BaseController {
      * 不存在的路径，路由到 404 页面
      * @return
      */
-    public String render_404() {
+    public String render404() {
         return "comm/error_404";
     }
 

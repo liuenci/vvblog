@@ -11,6 +11,9 @@ import java.sql.Types;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+/**
+ * @author liuenci
+ */
 public class Backup {
 	private Connection connection;
 	private TableCollection tables;
@@ -44,7 +47,6 @@ public class Backup {
 		for (Table table : tables) {
 			dataTable = DataTable.parse(metaData.getColumns(null, null,
 					table.getName(), null));
-			//System.out.print(dataTable);
 			for (Row row : dataTable) {
 				table.getColumns().add(
 						new Column(row.getString("COLUMN_NAME"), row

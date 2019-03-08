@@ -6,6 +6,9 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author liuenci
+ */
 @Component
 public interface LogVoMapper {
     long countByExample(LogVoExample example);

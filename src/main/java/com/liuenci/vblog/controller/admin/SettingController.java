@@ -61,7 +61,7 @@ public class SettingController extends BaseController {
     @PostMapping(value = "")
     @ResponseBody
     @Transactional(rollbackFor = TipException.class)
-    public RestResponseBo saveSetting(@RequestParam(required = false) String site_theme, HttpServletRequest request) {
+    public RestResponseBo saveSetting(@RequestParam(required = false) String siteTheme, HttpServletRequest request) {
         try {
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String, String> querys = new HashMap<>();
@@ -73,8 +73,8 @@ public class SettingController extends BaseController {
 
             WebConst.initConfig = querys;
 
-            if (StringUtils.isNotBlank(site_theme)) {
-                BaseController.THEME = "themes/" + site_theme;
+            if (StringUtils.isNotBlank(siteTheme)) {
+                BaseController.THEME = "themes/" + siteTheme;
             }
             logService.insertLog(LogActions.SYS_SETTING.getAction(), GsonUtils.toJsonString(querys), request.getRemoteAddr(), this.getUid(request));
             return RestResponseBo.ok();
@@ -98,13 +98,13 @@ public class SettingController extends BaseController {
     @PostMapping(value = "backup")
     @ResponseBody
     @Transactional(rollbackFor = TipException.class)
-    public RestResponseBo backup(@RequestParam String bk_type, @RequestParam String bk_path,
+    public RestResponseBo backup(@RequestParam String bkType, @RequestParam String bkPath,
                                  HttpServletRequest request) {
-        if (StringUtils.isBlank(bk_type)) {
+        if (StringUtils.isBlank(bkType)) {
             return RestResponseBo.fail("请确认信息输入完整");
         }
         try {
-            BackResponseBo backResponse = siteService.backup(bk_type, bk_path, "yyyyMMddHHmm");
+            BackResponseBo backResponse = siteService.backup(bkType, bkPath, "yyyyMMddHHmm");
             logService.insertLog(LogActions.SYS_BACKUP.getAction(), null, request.getRemoteAddr(), this.getUid(request));
             return RestResponseBo.ok(backResponse);
         } catch (Exception e) {

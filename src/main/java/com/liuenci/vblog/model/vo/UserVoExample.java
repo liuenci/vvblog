@@ -3,6 +3,9 @@ package com.liuenci.vblog.model.vo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author liuenci
+ */
 public class UserVoExample {
     protected String orderByClause;
 

@@ -14,7 +14,7 @@ import java.util.Random;
 
 /**
  * 工具类
- * Created by BlueT on 2017/3/9.
+ * @author liuenci
  */
 public class Tools {
     private static final Random random = new Random();
@@ -76,8 +76,6 @@ public class Tools {
      * @return
      */
     public static boolean isNumber(String str) {
-        // Pattern pattern=Pattern.compile("[0-9]*");
-        // return pattern.matcher(str).matches();
         if (null != str && 0 != str.trim().length() && str.matches("\\d*")) {
             return true;
         }
