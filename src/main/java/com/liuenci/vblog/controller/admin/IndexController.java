@@ -52,10 +52,13 @@ public class IndexController extends BaseController {
     @GetMapping(value = {"","/index"})
     public String index(HttpServletRequest request){
         log.info("Enter admin index method");
+        // 最近的五条评论
         List<CommentVo> comments = siteService.recentComments(5);
+        // 最近的五条文章
         List<ContentVo> contents = siteService.recentContents(5);
+        // 统计数据
         StatisticsBo statistics = siteService.getStatistics();
-        // 取最新的20条日志
+        // 取最新的 5 条日志
         List<LogVo> logs = logService.getLogs(1, 5);
 
         request.setAttribute("comments", comments);
@@ -84,6 +87,7 @@ public class IndexController extends BaseController {
 
         UserVo users = this.user(request);
         if (StringUtils.isNotBlank(screenName) && StringUtils.isNotBlank(email)) {
+            // 更新数据库中的数据
             UserVo temp = new UserVo();
             temp.setUid(users.getUid());
             temp.setScreenName(screenName);
@@ -91,7 +95,7 @@ public class IndexController extends BaseController {
             userService.updateByUid(temp);
             logService.insertLog(LogActions.UP_INFO.getAction(), GsonUtils.toJsonString(temp), request.getRemoteAddr(), this.getUid(request));
 
-            //更新session中的数据
+            // 更新session中的数据
             UserVo original = (UserVo) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
             original.setScreenName(screenName);
             original.setEmail(email);
